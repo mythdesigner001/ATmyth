@@ -782,4 +782,435 @@
       }
       .hero-bg-curve {
         border-bottom-left-radius: 30% 50px;
-        border-bottom-right-radius: 30% 50
+        border-bottom-right-radius: 30% 50px;
+      }
+      .hero-content-new { 
+        text-align: center; 
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .hero-title-new { font-size: 2.2rem; }
+      .local-grid, .social-grid { grid-template-columns: 1fr; }
+      .local-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .section-head { text-align: center; }
+      .section-sub { margin: 0 auto; }
+      .container { padding: 0 1.2rem; }
+    }
+
+    .fade { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade.visible { opacity: 1; transform: translateY(0); }
+
+  
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-mini">
+            <img id="logoImg" src="l.png" alt="Logo All Time 24 Horas">
+            <span id="logoText">24h</span>
+          </div>
+          <div class="brand-text">
+            <div class="brand-title" id="brandTitle"><span>all</span><span>time</span></div>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="nav-menu">
+          <a href="#inicio">Início</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#local">Local</a>
+          <a href="#social">Social</a>
+          <a href="#parceiros">Parceiros</a>
+        </div>
+        
+        <div class="nav-cta">
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar Tema">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="btn btn-outline" onclick="window.open('https://instagram.com/alltime24horas')">Instagram</button>
+        </div>
+        
+        <!-- Toggle Mobile (Visível quando .nav-cta some) -->
+        <button id="themeToggleMobile" class="theme-toggle" style="display: none;" aria-label="Alternar Tema">
+             <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero-new">
+      <div id="heroBgCurve" class="hero-bg-curve"></div>
+      <div class="hero-content-new fade">
+        <span class="hero-badge">Conveniência Premium</span>
+        <h1 class="hero-title-new">Sempre Aberta. Sempre Perto.</h1>
+        <p class="hero-subtitle-new">
+          A sua parada obrigatória em João Pessoa. Bebidas geladas, snacks e essenciais, 24 horas por dia.
+        </p>
+        <div class="hero-cta-new">
+          <a href="#produtos" class="btn btn-white" style="text-decoration: none;">Ver Produtos</a>
+          <a href="#local" class="btn" style="background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.5);">Unidades</a>
+        </div>
+      </div>
+      <!-- Seta rola para #produtos -->
+      <div class="scroll-indicator" onclick="scrollToId('produtos')"><i class="fas fa-chevron-down"></i></div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="block">
+      <div class="container">
+        <div class="section-head fade">
+          <div class="section-kicker">Favoritos</div>
+          <h2 class="section-title">O que a galera pede.</h2>
+          <p class="section-sub">Itens selecionados que salvam o seu dia (ou a sua noite).</p>
+        </div>
+
+        <div class="products-carousel-shell fade">
+          <button class="carousel-btn prev"><span>❮</span></button>
+          
+          <div class="products-track" id="productsTrack">
+            <article class="product-card">
+              <div>
+                <div class="product-tag">Refrigerante</div>
+                <div class="product-name">Coca-Cola</div>
+                <p class="product-info">Gelada, lata ou garrafa.</p>
+              </div>
+              <div class="product-badge"><span class="product-badge-dot"></span> Top 1</div>
+            </article>
+
+            <article class="product-card" style="background: radial-gradient(circle at 10% 10%, #4facfe, #00f2fe);">
+              <div>
+                <div class="product-tag">Cerveja</div>
+                <div class="product-name">Heineken</div>
+                <p class="product-info">Long neck sempre no ponto.</p>
+              </div>
+              <div class="product-badge"><span class="product-badge-dot"></span> Clássico</div>
+            </article>
+
+            <article class="product-card" style="background: radial-gradient(circle at 10% 10%, #ff9a9e, #fecfef);">
+              <div>
+                <div class="product-tag">Energético</div>
+                <div class="product-name">Red Bull</div>
+                <p class="product-info">Energia extra pra virar.</p>
+              </div>
+              <div class="product-badge"><span class="product-badge-dot"></span> Asas</div>
+            </article>
+
+            <article class="product-card" style="background: radial-gradient(circle at 10% 10%, #f093fb, #f5576c);">
+              <div>
+                <div class="product-tag">Snacks</div>
+                <div class="product-name">Doritos</div>
+                <p class="product-info">O companheiro da fome.</p>
+              </div>
+              <div class="product-badge"><span class="product-badge-dot"></span> Crocante</div>
+            </article>
+            
+            <article class="product-card" style="background: radial-gradient(circle at 10% 10%, #43e97b, #38f9d7);">
+              <div>
+                <div class="product-tag">Destilado</div>
+                <div class="product-name">Absolut</div>
+                <p class="product-info">Pra começar a festa.</p>
+              </div>
+              <div class="product-badge"><span class="product-badge-dot"></span> Premium</div>
+            </article>
+          </div>
+
+          <button class="carousel-btn next"><span>❯</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONDE ESTAMOS -->
+    <section id="local" class="block" style="background: var(--bg-soft);">
+      <div class="container">
+        <div class="section-head fade">
+          <div class="section-kicker">Localização</div>
+          <h2 class="section-title">Perto de você.</h2>
+          <p class="section-sub">Escolha a unidade mais próxima e venha nos visitar.</p>
+        </div>
+
+        <div class="local-cards fade">
+          <div class="local-card">
+            <div class="local-card-title">Bancários</div>
+            <div class="local-card-address">Jardim Cidade Universitária</div>
+            <div class="local-card-map">
+                <iframe src="https://www.google.com/maps?q=All%20Time%2024%20Horas%20Banc%C3%A1rios%20Jo%C3%A3o%20Pessoa&output=embed" loading="lazy"></iframe>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="local-card-link"><i class="fas fa-location-arrow"></i> Navegar</a>
+          </div>
+
+          <div class="local-card">
+            <div class="local-card-title">Geisel</div>
+            <div class="local-card-address">Região do Geisel / Paratibe</div>
+            <div class="local-card-map">
+                <iframe src="https://www.google.com/maps?q=All%20Time%2024%20Horas%20Geisel%20Jo%C3%A3o%20Pessoa&output=embed" loading="lazy"></iframe>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="local-card-link"><i class="fas fa-location-arrow"></i> Navegar</a>
+          </div>
+
+          <div class="local-card">
+            <div class="local-card-title">Castelo Branco</div>
+            <div class="local-card-address">Av. Pres. Castelo Branco</div>
+            <div class="local-card-map">
+                <iframe src="https://www.google.com/maps?q=All%20Time%2024%20Horas%20Castelo%20Branco%20Jo%C3%A3o%20Pessoa&output=embed" loading="lazy"></iframe>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="local-card-link"><i class="fas fa-location-arrow"></i> Navegar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SOCIAL -->
+    <section id="social" class="block">
+      <div class="container">
+        <div class="section-head fade">
+          <div class="section-kicker">Redes Sociais</div>
+          <h2 class="section-title">Fale com a All Time.</h2>
+          <p class="section-sub">Acompanhe nosso dia a dia e promoções exclusivas.</p>
+        </div>
+        
+        <div class="social-grid fade">
+          <div class="social-card">
+             <i class="fab fa-instagram" style="font-size: 3rem; color: var(--at-pink); margin-bottom: 1rem;"></i>
+             <div class="social-handle">Instagram <span>@alltime24horas</span></div>
+             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+               Tire suas dúvidas, veja stories das unidades e fique por dentro de tudo que rola na conveniência mais querida da cidade.
+             </p>
+             <button class="btn btn-primary" onclick="window.open('https://instagram.com/alltime24horas')">
+               Seguir no Instagram
+             </button>
+          </div>
+          
+          <div style="text-align: center;" class="fade">
+             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Também estamos disponíveis via e-mail para parcerias:</p>
+             <a href="mailto:contato@alltime.com.br" style="color: var(--at-pink); font-weight: 600;">contato@alltime.com.br</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- PARCEIROS -->
+    <section id="parceiros" style="background: var(--bg-soft); padding: 3rem 0; overflow: hidden; border-top: 1px solid var(--border-color);">
+        <div class="container" style="text-align: center; margin-bottom: 1rem;">
+             <div class="section-kicker">Parceiros Oficiais</div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=COCA" alt="Coca">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=AMBEV" alt="Ambev">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=RED+BULL" alt="Red Bull">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=ELMA+CHIPS" alt="Elma">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=MONSTER" alt="Monster">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=HEINEKEN" alt="Heineken">
+                <!-- Repetição -->
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=COCA" alt="Coca">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=AMBEV" alt="Ambev">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=RED+BULL" alt="Red Bull">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=ELMA+CHIPS" alt="Elma">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=MONSTER" alt="Monster">
+                <img class="partner-logo" src="https://placehold.co/100x50/silver/white?text=HEINEKEN" alt="Heineken">
+            </div>
+        </div>
+    </section>
+    
+    <!-- FINAL BANNER -->
+    <section class="banner-final fade">
+        <div class="banner-content">
+            <h2 class="banner-title">Estamos esperando por você.</h2>
+            <p class="banner-subtitle">Não importa a hora, a All Time está sempre de portas abertas.</p>
+            
+            <div class="banner-card">
+              <img src="b.jpeg" alt="Banner All Time">
+            </div>
+
+            <button class="btn btn-white" style="color: var(--at-pink); font-weight: 800;" onclick="scrollToId('local', this)">
+               VER ROTA AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 2rem 1.5rem; font-size: 0.75rem; color: var(--text-muted); background: var(--bg-body);">
+      <p>© 2025 All Time 24 Horas. João Pessoa/PB.</p>
+      <p>Feito com ❤️ da @techmyth_h pra toda capital!.</p>
+    
+    </footer>
+
+  </main>
+
+  <!-- BOTTOM NAV (MOBILE ONLY) -->
+  <div class="bottom-nav">
+    <button class="nav-item active" onclick="scrollToId('inicio', this)">
+      <i class="fas fa-home"></i>
+      <span>Início</span>
+    </button>
+    <button class="nav-item" onclick="scrollToId('produtos', this)">
+      <i class="fas fa-shopping-bag"></i>
+      <span>Produtos</span>
+    </button>
+    
+    <button class="nav-fab" aria-label="Mapa" onclick="scrollToId('local', this)">
+      <i class="fas fa-map-marker-alt"></i>
+    </button>
+    
+    <button class="nav-item" onclick="scrollToId('social', this)">
+      <i class="fab fa-instagram"></i>
+      <span>Social</span>
+    </button>
+    
+    <button class="nav-item" onclick="scrollToId('parceiros', this)">
+      <i class="fas fa-star"></i>
+      <span>Parceiros</span>
+    </button>
+  </div>
+
+  <script>
+    // Fade Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    // Parallax
+    window.addEventListener("scroll", () => {
+      const offset = window.pageYOffset;
+      const curve = document.getElementById("heroBgCurve");
+      if (curve && offset < 600) {
+        curve.style.transform = `translateY(${offset * 0.2}px)`;
+      }
+    });
+
+    // Horizontal Scroll Buttons
+    const track = document.getElementById("productsTrack");
+    const prevBtn = document.querySelector(".carousel-btn.prev");
+    const nextBtn = document.querySelector(".carousel-btn.next");
+    
+    if(prevBtn) prevBtn.addEventListener("click", () => {
+        track.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    if(nextBtn) nextBtn.addEventListener("click", () => {
+        track.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+
+    // Scroll Helper
+    function scrollToId(id, btn) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth' });
+        
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        document.querySelectorAll('.nav-fab').forEach(i => i.classList.remove('active'));
+        
+        if (btn) {
+            if (btn.classList.contains('nav-fab')) {
+                 btn.classList.add('active');
+            } else {
+                 btn.classList.add('active');
+            }
+        }
+    }
+
+    // ================= DARK MODE LOGIC =================
+    const body = document.body;
+    const toggles = [
+        document.getElementById('themeToggle'),
+        document.getElementById('themeToggleMobile'),
+        document.getElementById('themeToggleMobileNav') // pode ser null, tratado no loop
+    ];
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        updateIcons(true);
+    }
+
+    function toggleTheme() {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateIcons(isDark);
+    }
+
+    function updateIcons(isDark) {
+        toggles.forEach(btn => {
+            if(!btn) return;
+            const icon = btn.querySelector('i');
+            if (isDark) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                if(btn.querySelector('span')) btn.querySelector('span').innerText = "Claro";
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                if(btn.querySelector('span')) btn.querySelector('span').innerText = "Escuro";
+            }
+        });
+    }
+
+    toggles.forEach(btn => {
+        if(btn) btn.addEventListener('click', toggleTheme);
+    });
+
+    const mediaQuery = window.matchMedia('(max-width: 900px)');
+    function handleMobileChange(e) {
+      const mobileToggle = document.getElementById('themeToggleMobile');
+      if (e.matches) {
+          if(mobileToggle) mobileToggle.style.display = 'flex';
+      } else {
+          if(mobileToggle) mobileToggle.style.display = 'none';
+      }
+    }
+    mediaQuery.addListener(handleMobileChange);
+    handleMobileChange(mediaQuery);
+
+    // ================= LOGO MODE A/B =================
+    // "A" = com logo (l.png) -> [logo] Alltime 24h
+    // "B" = sem logo -> [24h] alltime (padrão antigo)
+    const LOGO_MODE = "A"; // <<< TROCA AQUI PARA "B" SE QUISER SEM LOGO
+
+    function applyLogoMode() {
+      const logoImg   = document.getElementById('logoImg');
+      const logoText  = document.getElementById('logoText');
+      const brandTitle = document.getElementById('brandTitle');
+      if (!logoImg || !logoText || !brandTitle) return;
+
+      if (LOGO_MODE === "A") {
+        // testa se o l.png existe
+        const testImg = new Image();
+        testImg.onload = () => {
+          logoImg.style.display = 'block';
+          logoText.style.display = 'none';
+          brandTitle.innerHTML = '<span>All</span><span>time</span><span style="color:pink;">24h</span>';
+        };
+        testImg.onerror = () => {
+          logoImg.style.display = 'none';
+          logoText.style.display = 'flex';
+          brandTitle.innerHTML = '<span>all</span><span>time</span>';
+        };
+        testImg.src = logoImg.src || 'l.png';
+      } else {
+        logoImg.style.display = 'none';
+        logoText.style.display = 'flex';
+        brandTitle.innerHTML = '<span>all</span><span>time</span>';
+      }
+    }
+
+    applyLogoMode();
+  </script>
+</body>
+</html>
